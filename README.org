@@ -1,31 +1,20 @@
-/*****************************************************************************
-//Student's Name: Boyang YAN
-//Student's email address: by932@uowmail.edu.au
-//Last modification: 03/08/2016
-****************************************************************************/
-compile in banshee:
-g++ -o Rainbow main.cpp pwdUsedRecord.cpp md5.cpp rainbowTable.cpp
------------------------------------------------------------
-MD5 sourse code is from http://www.zedwood.com/article/cpp-md5-function
-------------------------------------------------------------
-convert hex to dec some idea from https://stackoverflow.com/questions/11031159/converting-hexadecimal-to-decimal
-----------------------------------------
-I total write 7 file
-MD5.cpp MD5.h is a hash function when you push a string you will get this tring hash value
+* Overview
+This is a rainbowTable project. Last modification: 03/08/2016
+There are total 7 code file for this project.
 
-pwdUsedRecord.cpp pwdUsedRecord.h is for read input password file and record in a table,
-which have 3 colum such as password id, password and password used state is used or not used.
-how many password are you read, you will get how many rows
+MD5.cpp MD5.h is a hash function when you push a string you will get this tring hash value.
+
+pwdUsedRecord.cpp pwdUsedRecord.h is for read input password file and record in a table, which have 3 colum such as password id, password and password used state is used or not used. how many password are you read, you will get how many rows.
 
 rainbowTable.cpp rainbowTable.h have two main function one is generate rainbow table.
-This rainbow table have two colum. first colum is record original word and the second is for after hash
-and reduction original word four time after record the last hash value.
-reduction function using how many digial to find next one is depand on how many password in the file.
-for example, password have 100, I only pick up 2 digial. The pick digial is number of password digtal - 1.
-after I mod total number of password for make sure we can find next password.
-The second main founcation is search pre-image. I am using binary seach.
-if input hash value are not in the rainbow table, I will reduction and hash, using new hash for seach whether
-in the rainbow table. if not in rainbow table reduction and hash again. if more than four time show error.
-if in the rainbow table. maybe exist more than one line in the rainbow, I will search pre-image one line by
-one line. If found pre-image all good, if not in those line reduction and hash again. seach in rainbow table again.
-total maximum time is four.
+This rainbow table have two colum. first colum is record original word and the second is for after hash and reduction original word four time after record the last hash value. reduction function using how many digial to find next one is depand on how many password in the file.
+
+for example, password have 100, I only pick up 2 digial. The pick digial is number of password digtal - 1. after I mod total number of password for make sure we can find next password. The second main founcation is search pre-image. I am using binary seach. if input hash value are not in the rainbow table, I will reduction and hash, using new hash for seach whether in the rainbow table. if not in rainbow table reduction and hash again. if more than four time show error. if in the rainbow table. maybe exist more than one line in the rainbow, I will search pre-image one line by one line. If found pre-image all good, if not in those line reduction and hash again. seach in rainbow table again. total maximum time is four.
+
+* Compile command
+g++ -o Rainbow main.cpp pwdUsedRecord.cpp md5.cpp rainbowTable.cpp
+
+
+* Reference List
+MD5 sourse code is from http://www.zedwood.com/article/cpp-md5-function
+convert hex to dec some idea from https://stackoverflow.com/questions/11031159/converting-hexadecimal-to-decimal
