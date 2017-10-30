@@ -1,2 +1,0 @@
-# rainbowTable
-rainbowTable
